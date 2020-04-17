@@ -22,7 +22,7 @@
       Liste,
       Image,
       Lien,
-      Citat,
+      Citat, //citation 
       FinHTML,
       FIN_SEQUENCE,     // pseudo lexeme ajoute en fin de sequence
     } Nature_Lexeme ;
