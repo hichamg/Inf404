@@ -1,2 +1,2 @@
-# Inf404
+# INF404
 Projet INF404
