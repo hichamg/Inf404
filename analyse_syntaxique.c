@@ -30,7 +30,8 @@ void rec_photo() ;
 void rec_lien() ;
 void rec_texte();
 void rec_phrase();
-//char *Nature_vers_Chaine (Nature_Lexeme nature);
+void rec_contenuListe();
+char *Nature_vers_Chaine (Nature_Lexeme nature);
 
 void rec_html(){
     if(lexeme_courant().nature==HTMLDEBUT) {
@@ -138,24 +139,43 @@ void rec_paragraph() {
         }
     }
 }
+
 /*
 void rec_liste(){
     if (lexeme_courant().nature == Liste){
-        avancer();
-        rec_contenu();
-        rec_liste();
+        rec_contenuListe();
+        switch (lexeme_courant().nature){
+            case Liste:
+                avancer();
+                break;
+            default:
+                printf("ERREUR: Specification incorrecte LISTE\n");
+                exit(0);
+        }
     }
 }
- */
+
+void rec_contenuListe(){
+    avancer();
+    printf("%s\n",Nature_vers_Chaine(lexeme_courant().nature));
+    rec_contenu();
+    //printf("%s\n",Nature_vers_Chaine(lexeme_courant().nature));
+    if (lexeme_courant().nature!=Liste) {
+        rec_contenuListe();
+    }
+}
+*/
+
 
 void rec_contenu(){
     //Contenu -> Photo Contenu || Contenu -> Paragraphe Contenu
     //Contenu -> Lien Contenu || Contenu -> Liste Contenu
     switch(lexeme_courant().nature){
-        case Photo: rec_photo(); break;
-        case Parag: rec_paragraph(); break;
-        //case Liste: rec_liste(); break;
-        case LienTB: rec_lien(); break;
+        case Photo: rec_photo(); rec_contenu();
+        case Parag: rec_paragraph(); rec_contenu();
+        //case Liste: rec_liste(); rec_contenu();
+        case LienTB: rec_lien(); rec_contenu();
+        default: break;
     }
 }
  /* ----------------------------------------------------------------------- */
