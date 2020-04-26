@@ -1,11 +1,14 @@
+#define NCARMAX 10000
 #include <string.h>
 #include <stdlib.h>
 #include <stdio.h>
 
 #include "analyse_syntaxique.h"
 #include "analyse_lexicale.h"
-
-
+#include "type_ast.h"
+#include "lecture_caracteres.h"
+#include "ast_construction.h"
+#include "ast_parcours.h"
 
 /*    void rec_eag(Ast *A1);
     void seq_terme(Ast *A2);
@@ -18,89 +21,146 @@
     int op2(TypeOperateur *Op);
     TypeOperateur Operateur(Nature_Lexeme nature);
 */
-    void rec_html() ;
-    void rec_titre() ;
-    void rec_contenu() ;
-    void rec_paragraph() ;
-    void rec_liste() ;
-    void rec_photo() ;
-    void rec_lien() ;
-    void rec_texte();
-    void rec_phrase();
- 
-   
-    void rec_html(){
-        if(lexeme_courant.nature()==DebutHTML){
+void rec_html() ;
+void rec_titre() ;
+void rec_contenu() ;
+void rec_paragraph() ;
+void rec_liste() ;
+void rec_photo() ;
+void rec_lien() ;
+void rec_texte();
+void rec_phrase();
+//char *Nature_vers_Chaine (Nature_Lexeme nature);
+
+void rec_html(){
+    if(lexeme_courant().nature==HTMLDEBUT) {
+        avancer();
+        rec_titre();
+        rec_contenu();
+        if (lexeme_courant().nature == HTMLFIN)
             avancer();
-            rec_titre();
-            rec_contenu();
-        }else {
-            printf("ERREUR :Specification incorrecte:\n
-                    \t\"DebutHTML\" Manquante.");
+        else {
+            printf("ERREUR :Specification incorrecte HTML\n");
             exit(1);
         }
-        if (lexeme_courant.nature()!=FinHTML){
-            printf("ERREUR :Specification incorrecte:\n
-                    \t\"FinHTML\" Manquante.");
-            exit(2);
-        }
     }
+}
 
-    void rec_titre(){
-        // Titre -> T Texte T ||Titre -> VIDE
-        if (lexeme_courant.nature()==Titre){
-            avancer(); 
-            rec_texte();
-            switch(lexeme_courant.nature()){
-                case Titre: avancer(); break;
-                default: 
-                printf("ERREUR :Specification incorrecte:\n
-                    \t\"FinHTML\" Manquante.");
-                exit(3);
-            }
-        }
+void rec_titre(){
+    // Titre -> T Texte T ||Titre -> VIDE
+    if (lexeme_courant().nature==Titre){
         avancer();
+        rec_texte();
+        switch(lexeme_courant().nature){
+            case Titre: avancer(); break;
+            default:
+            printf("ERREUR :Specification incorrecte TITRE\n");
+            exit(3);
+        }
     }
+}
 
-    void rec_texte(){
-        // Texte -> “ Phrase “
-        if (lexeme_courant.nature()==Citat){
+void rec_texte(){
+    // Texte -> “ Phrase “
+    if (lexeme_courant().nature==Citat){
+        rec_phrase();
+        if(lexeme_courant().nature==Citat){
             avancer();
-            rec_phrase();
-            if(lexeme_courant.nature()==Citat){
-                avancer();
-            }else{
-                printf("ERREUR :Specification incorrecte:\n
-                    \t-\"- Manquante.");
-                exit(4);
-            }
+            avancer();
         }else{
-            printf("ERREUR :Specification incorrecte:\n
-                    \t-\"- Manquante.");
+            printf("ERREUR :Specification incorrecte TEXTE\n");
             exit(4);
         }
     }
+}
 
-    void rec_phrase(){
-        //Phrase -> Chaine_de_caractères
-        do{
-            avancer();
-        } while (lexeme_courant.nature()!=Citat);
+void rec_phrase(){
+    //Phrase -> Chaine_de_caractères
+    int i = 0;
+    while (caractere_courant()!='\"' && i < NCARMAX){
+        avancer_car();
+        i++;
     }
+    if (i==NCARMAX){
+        printf("Nombre de caracteres maximal (%d) depassé ou erreur syntaxique",NCARMAX);
+        exit(0);
+    }
+}
 
-    void rec_contenu(){
-        //Contenu -> Photo Contenu || Contenu -> Paragraphe Contenu 
-        //Contenu -> Lien Contenu || Contenu -> Liste Contenu
-        switch( lexeme_courant.nature() ){
-            case Image: rec_photo() ;
+void rec_photo(){
+    if (lexeme_courant().nature == Photo) {
+        avancer();
+        rec_texte();
+        if (lexeme_courant().nature == Photo)
+            avancer();
+        else {
+            printf("ERREUR: Specification incorrecte PHOTO\n");
+            exit(0);
         }
     }
-     
-    
-    
-/* ----------------------------------------------------------------------- */
+}
+
+void rec_lien(){
+    if (lexeme_courant().nature == LienTB){
+        avancer();
+        rec_texte();
+        switch (lexeme_courant().nature) {
+            case LienVR:
+                avancer();
+                rec_texte();
+                break;
+            default:
+                printf("ERREUR: Specification incorrecte LIEN1\n");
+                exit(0);
+        }
+        switch (lexeme_courant().nature){
+            case LienTB:
+                avancer();
+                break;
+            default:
+                printf("ERREUR: Specification incorrecte LIEN2\n");
+                exit(0);
+        }
+    }
+}
+
+void rec_paragraph() {
+    //printf("%s\n",Nature_vers_Chaine(lexeme_courant().nature));
+    if (lexeme_courant().nature == Parag) {
+        avancer();
+        rec_texte();
+        //printf("%s\n",Nature_vers_Chaine(lexeme_courant().nature));
+        if (lexeme_courant().nature == Parag){
+            avancer();
+        }else{
+            printf("ERREUR: Specification incorrecte PARAGRAPHE\n");
+            exit(0);
+        }
+    }
+}
+/*
+void rec_liste(){
+    if (lexeme_courant().nature == Liste){
+        avancer();
+        rec_contenu();
+        rec_liste();
+    }
+}
+ */
+
+void rec_contenu(){
+    //Contenu -> Photo Contenu || Contenu -> Paragraphe Contenu
+    //Contenu -> Lien Contenu || Contenu -> Liste Contenu
+    switch(lexeme_courant().nature){
+        case Photo: rec_photo(); break;
+        case Parag: rec_paragraph(); break;
+        //case Liste: rec_liste(); break;
+        case LienTB: rec_lien(); break;
+    }
+}
+ /* ----------------------------------------------------------------------- */
 void analyser(char* nomFichier){
-        
+
     demarrer(nomFichier);
     rec_html(); 
 
@@ -111,8 +171,8 @@ void analyser(char* nomFichier){
         exit(1);
     }
 
-    afficherA(A);
-    printf(" \n RESULTAT = %d \n" ,evaluation(A));
+    //afficherA(A);
+    //printf(" \n RESULTAT = %d \n" ,evaluation(A));
 
 
 }    
