@@ -11,30 +11,30 @@
 
    typedef enum {
 	  ERREUR_CAR,   // caractere incorrect
-	  SYMBOLE,
-	  C_FIN_SEQUENCE   // caractere de fin de sequence
+	  CHIFFRE,			// chiffre 
+	  SYMBOLE,			// symbole,
+      C_FIN_SEQUENCE   // caractere de fin de sequence     
    } Nature_Caractere ;
 
-   typedef enum {
-      HTMLDEBUT,
-      HTMLFIN,
-      Titre,
-      Parag,
-      Liste,
-      Photo,
-      LienTB,
-      LienVR,
-      Citat,
+   typedef enum { 
+      ENTIER,           // sequence de chiffres
+      PLUS,             // +
+      MOINS,            // -
+      MUL,              // *
+      DIV,              // /
+      PARO,		// (
+      PARF,		// )
       FIN_SEQUENCE,     // pseudo lexeme ajoute en fin de sequence
     } Nature_Lexeme ;
 
 
-   typedef struct {
+   typedef struct { 
       Nature_Lexeme nature;    // nature du lexeme
       unsigned int ligne;           // numero de ligne
       unsigned int colonne;         // numero de colonne
-      char chaine[100];           // chaine de caracteres
-   } Lexeme ;
+      char chaine[256];           // chaine de caracteres
+      int valeur;          // valeur d'un entier
+   } Lexeme ; 
 
    void afficher(Lexeme l);
 
