@@ -1,1 +1,1 @@
-H _ "HDSH","SDOIH" _ P "HSOIDH" P _ "HDSH","SDOIH" _ F
+H T "Titre du Site" T _ "www.facebook.com","FACEBOOK" _ P "Hello World" P _ "www.google.com","GOOGLE" _ F

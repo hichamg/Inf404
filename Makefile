@@ -1,4 +1,4 @@
-all: test_lexeme calculette
+all: test_lexeme calculette traducteurHTML
 
 lecture_caracteres.o: lecture_caracteres.h lecture_caracteres.c
 	gcc -g -Wall -c lecture_caracteres.c
@@ -23,6 +23,9 @@ test_lexeme: analyse_lexicale.o  lecture_caracteres.o  test_lexeme.o
 
 calculette: calculette.o analyse_syntaxique.o analyse_lexicale.o ast_construction.o ast_parcours.o lecture_caracteres.o 
 	gcc -g -Wall -o calculette calculette.o analyse_syntaxique.o analyse_lexicale.o ast_construction.o ast_parcours.o lecture_caracteres.o
+
+traducteurHTML: traducteurHTML.o analyse_syntaxique.o analyse_lexicale.o ast_construction.o ast_parcours.o lecture_caracteres.o
+	gcc -g -Wall -o traducteurHTML traducteurHTML.o analyse_syntaxique.o analyse_lexicale.o ast_construction.o ast_parcours.o lecture_caracteres.o
 
 clean:
 	rm -f  calculette test_lexeme *.o
