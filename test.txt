@@ -1,1 +1,1 @@
-H T "Titre du Site" T _ "www.facebook.com","FACEBOOK" _ P "Hello World" P _ "www.google.com","GOOGLE" _ F
+H T "Titre du Site" T _ "https://www.facebook.com","FACEBOOK" _ _ "https://www.google.com","GOOGLE" _ L P "Hello World" P P "Hello Cairo" P I "cairo.jpg" I L F

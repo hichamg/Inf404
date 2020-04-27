@@ -154,7 +154,8 @@ void reconnaitre_lexeme() {
                         exit(0) ;
                 };
                 break ;
-
+            case E_FIN:
+                break;
         } ; // fin du switch(etat)
     } ; // fin du while (etat != fin)
 }

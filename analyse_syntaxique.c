@@ -7,17 +7,6 @@
 #include "analyse_lexicale.h"
 #include "lecture_caracteres.h"
 
-/*    void rec_eag(Ast *A1);
-    void seq_terme(Ast *A2);
-    void suite_seq_terme(Ast A1 , Ast *A2);
-    void terme(Ast *A1);
-    void seq_facteur(Ast *A2);
-    void suite_seq_facteur(Ast A1 , Ast *A2);
-    void facteur(Ast *A1);
-    int op1(TypeOperateur *Op);
-    int op2(TypeOperateur *Op);
-    TypeOperateur Operateur(Nature_Lexeme nature);
-*/
 void rec_html(FILE* f2) ;
 void rec_titre(FILE* f2) ;
 void rec_contenu(FILE* f2) ;
@@ -104,10 +93,13 @@ void rec_phrase(FILE* f2){
 
 void rec_photo(FILE* f2){
     if (lexeme_courant().nature == Photo) {
+        fprintf(f2,"\t\t<img src=\"");
         avancer();
         rec_texte(f2);
-        if (lexeme_courant().nature == Photo)
+        if (lexeme_courant().nature == Photo) {
+            fprintf(f2, "\">");
             avancer();
+        }
         else {
             printf("ERREUR: Specification incorrecte PHOTO\n");
             exit(0);
@@ -143,12 +135,10 @@ void rec_lien(FILE* f2){
 }
 
 void rec_paragraph(FILE* f2) {
-    //printf("%s\n",Nature_vers_Chaine(lexeme_courant().nature));
     if (lexeme_courant().nature == Parag) {
         fprintf(f2,"\t\t<p>");
         avancer();
         rec_texte(f2);
-        //printf("%s\n",Nature_vers_Chaine(lexeme_courant().nature));
         if (lexeme_courant().nature == Parag){
             fprintf(f2,"</p>\n");
             avancer();
@@ -159,12 +149,15 @@ void rec_paragraph(FILE* f2) {
     }
 }
 
-/*
-void rec_liste(){
+
+void rec_liste(FILE *f2){
     if (lexeme_courant().nature == Liste){
-        rec_contenuListe();
+        fprintf(f2,"\t<ul>\n");
+        avancer();
+        rec_contenuListe(f2);
         switch (lexeme_courant().nature){
             case Liste:
+                fprintf(f2,"\t</ul>\n");
                 avancer();
                 break;
             default:
@@ -174,17 +167,30 @@ void rec_liste(){
     }
 }
 
-void rec_contenuListe(){
-    avancer();
-    printf("%s\n",Nature_vers_Chaine(lexeme_courant().nature));
-    rec_contenu();
-    //printf("%s\n",Nature_vers_Chaine(lexeme_courant().nature));
-    if (lexeme_courant().nature!=Liste) {
-        rec_contenuListe();
+void rec_contenuListe(FILE *f2) {
+    switch (lexeme_courant().nature) {
+        case Photo:
+            fprintf(f2,"\t\t<li>");
+            rec_photo(f2);
+            fprintf(f2,"\t\t</li>\n");
+            rec_contenuListe(f2);
+            break;
+        case Parag:
+            fprintf(f2,"\t\t<li>");
+            rec_paragraph(f2);
+            fprintf(f2,"\t\t</li>\n");
+            rec_contenuListe(f2);
+            break;
+        case LienTB:
+            fprintf(f2,"\t\t<li>");
+            rec_lien(f2);
+            fprintf(f2,"\t\t</li>\n");
+            rec_contenuListe(f2);
+            break;
+        default:
+            break;
     }
 }
-*/
-
 
 void rec_contenu(FILE* f2){
     //Contenu -> Photo Contenu || Contenu -> Paragraphe Contenu
@@ -192,7 +198,7 @@ void rec_contenu(FILE* f2){
     switch(lexeme_courant().nature){
         case Photo: rec_photo(f2); rec_contenu(f2);
         case Parag: rec_paragraph(f2); rec_contenu(f2);
-        //case Liste: rec_liste(); rec_contenu();
+        case Liste: rec_liste(f2); rec_contenu(f2);
         case LienTB: rec_lien(f2); rec_contenu(f2);
         default: break;
     }
@@ -216,9 +222,5 @@ void analyser(char* nomFichierSource,char* nomFicherDest){
         printf("SYNTAXE INCORRECTE\n");
         exit(1);
     }
-
-    //afficherA(A);
-    //printf(" \n RESULTAT = %d \n" ,evaluation(A));
-
 
 }    
