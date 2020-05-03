@@ -6,12 +6,13 @@
 --
 -- P. Habraken : 12 novembre 2002
 -- L. Mounier : Aout 2016 (version en C)
+-- ELFAKHARANY - GANNOUNE: Avril 2020 (modifications pour projet Traducteur HTML)
  ------------------------------------------------------------------------ */
 
 
 #include <stdio.h>
 #include <string.h>
-
+#include <stdlib.h>
 #include "lecture_caracteres.h"
 
    /* --------------------------------------------------------------------- */
@@ -24,11 +25,15 @@
 
    /* --------------------------------------------------------------------- */
 
-   void demarrer_car(char *nom_fichier) { 
+   void demarrer_car(char *nom_fichier) {
       if (strlen(nom_fichier) == 0) {
          File = stdin ;
       } else {
 	 File = fopen(nom_fichier, "r") ;
+	 if (File==NULL){
+	     printf("Le fichier %s n'existe pas\n",nom_fichier);
+         exit(15);
+	 }
       } ;
       LigneCour = 1 ; ColonneCour = 0 ;
       avancer_car () ;

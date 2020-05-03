@@ -145,15 +145,19 @@ void reconnaitre_lexeme() {
                                 lexeme_en_cours.nature = Citat;
                                 etat = E_FIN;
                                 break;
+                            case '#':
+                                lexeme_en_cours.nature = Comment;
+                                etat = E_FIN;
+                                break;
                             default:
-                                printf("Erreur_Lexicale") ;
+                                printf("ERREUR LEXICALE: %c n'est pas reconnu - Ligne: %d, Colonne: %d\n",caractere_courant(),numero_ligne(),numero_colonne()) ;
                                 exit(0) ;
                         } ;
                         avancer_car() ;
                         break ;
 
                     default:
-                        printf("Erreur_Lexicale\n") ;
+                        printf("ERREUR LEXICALE: %c n'est pas reconnu - Ligne: %d, Colonne: %d\n",caractere_courant(),numero_ligne(),numero_colonne()) ;
                         exit(0) ;
                 };
                 break ;
@@ -205,6 +209,7 @@ int est_symbole(char c)  {
         case '_':
         case ',':
         case '\"':
+        case '#':
             return 1;
 
         default:
