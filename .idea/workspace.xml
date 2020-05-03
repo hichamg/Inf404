@@ -2,7 +2,6 @@
 <project version="4">
   <component name="BookmarkManager">
     <bookmark url="file://$PROJECT_DIR$/analyse_syntaxique.c" line="39" />
-    <bookmark url="file://$PROJECT_DIR$/INF404_ELFAKHARANY_GANNOUNE/analyse_syntaxique.h" line="16" />
   </component>
   <component name="CMakeRunConfigurationManager" shouldGenerate="true" shouldDeleteObsolete="true">
     <generated />
@@ -13,7 +12,31 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b6c7cf47-6ab1-45f3-ad1a-539a8cfbca67" name="Default Changelist" comment="" />
+    <list default="true" id="b6c7cf47-6ab1-45f3-ad1a-539a8cfbca67" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/INF404_ELFAKHARANY_GANNOUNE/Tests/testPhotoListedeParagraphesLien.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/INF404_ELFAKHARANY_GANNOUNE/Tests/testTitrePhotoListedeParagraphesLien.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/INF404_ELFAKHARANY_GANNOUNE/test.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/INF404_ELFAKHARANY_GANNOUNE/traducteurHTML.exe.stackdump" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/INF404_ELFAKHARANY_GANNOUNE/Tests/ErreurHTML.txt" beforeDir="false" afterPath="$PROJECT_DIR$/INF404_ELFAKHARANY_GANNOUNE/Tests/ErreurHTML.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/INF404_ELFAKHARANY_GANNOUNE/Tests/ErreurLexicale.txt" beforeDir="false" afterPath="$PROJECT_DIR$/INF404_ELFAKHARANY_GANNOUNE/Tests/ErreurLexicale.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/INF404_ELFAKHARANY_GANNOUNE/Tests/ErreurLien.txt" beforeDir="false" afterPath="$PROJECT_DIR$/INF404_ELFAKHARANY_GANNOUNE/Tests/ErreurLien.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/INF404_ELFAKHARANY_GANNOUNE/Tests/ErreurLien2.txt" beforeDir="false" afterPath="$PROJECT_DIR$/INF404_ELFAKHARANY_GANNOUNE/Tests/ErreurLien2.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/INF404_ELFAKHARANY_GANNOUNE/Tests/ErreurListe.txt" beforeDir="false" afterPath="$PROJECT_DIR$/INF404_ELFAKHARANY_GANNOUNE/Tests/ErreurListe.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/INF404_ELFAKHARANY_GANNOUNE/Tests/ErreurNombreCaractèresDepasé.txt" beforeDir="false" afterPath="$PROJECT_DIR$/INF404_ELFAKHARANY_GANNOUNE/Tests/ErreurNombreCaractèresDepasé.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/INF404_ELFAKHARANY_GANNOUNE/Tests/ErreurParagraphe.txt" beforeDir="false" afterPath="$PROJECT_DIR$/INF404_ELFAKHARANY_GANNOUNE/Tests/ErreurParagraphe.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/INF404_ELFAKHARANY_GANNOUNE/Tests/ErreurPhoto.txt" beforeDir="false" afterPath="$PROJECT_DIR$/INF404_ELFAKHARANY_GANNOUNE/Tests/ErreurPhoto.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/INF404_ELFAKHARANY_GANNOUNE/Tests/testContenu.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/INF404_ELFAKHARANY_GANNOUNE/Tests/testImageListeParagrapheLien.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/INF404_ELFAKHARANY_GANNOUNE/Tests/testTitre.txt" beforeDir="false" afterPath="$PROJECT_DIR$/INF404_ELFAKHARANY_GANNOUNE/Tests/testTitre.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/INF404_ELFAKHARANY_GANNOUNE/Tests/testTitreContenu.txt" beforeDir="false" afterPath="$PROJECT_DIR$/INF404_ELFAKHARANY_GANNOUNE/Tests/testTitreContenu.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/INF404_ELFAKHARANY_GANNOUNE/Tests/testTitreImageListeParagrapheLien.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/INF404_ELFAKHARANY_GANNOUNE/analyse_lexicale.c" beforeDir="false" afterPath="$PROJECT_DIR$/INF404_ELFAKHARANY_GANNOUNE/analyse_lexicale.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/INF404_ELFAKHARANY_GANNOUNE/analyse_lexicale.h" beforeDir="false" afterPath="$PROJECT_DIR$/INF404_ELFAKHARANY_GANNOUNE/analyse_lexicale.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/INF404_ELFAKHARANY_GANNOUNE/analyse_syntaxique.c" beforeDir="false" afterPath="$PROJECT_DIR$/INF404_ELFAKHARANY_GANNOUNE/analyse_syntaxique.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/INF404_ELFAKHARANY_GANNOUNE/analyse_syntaxique.h" beforeDir="false" afterPath="$PROJECT_DIR$/INF404_ELFAKHARANY_GANNOUNE/analyse_syntaxique.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/INF404_ELFAKHARANY_GANNOUNE/lecture_caracteres.c" beforeDir="false" afterPath="$PROJECT_DIR$/INF404_ELFAKHARANY_GANNOUNE/lecture_caracteres.c" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,7 +47,39 @@
     <option name="formatViaClangd" value="false" />
   </component>
   <component name="FileEditorManager">
+<<<<<<< HEAD
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
+=======
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/INF404_ELFAKHARANY_GANNOUNE/analyse_lexicale.c">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-2057">
+              <caret line="41" column="12" lean-forward="true" selection-start-line="41" selection-start-column="12" selection-end-line="41" selection-end-column="12" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/INF404_ELFAKHARANY_GANNOUNE/analyse_syntaxique.c">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="197">
+              <caret line="232" column="25" selection-start-line="232" selection-start-column="25" selection-end-line="232" selection-end-column="25" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/INF404_ELFAKHARANY_GANNOUNE/Tests/ErreurListe2.txt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="17">
+              <caret line="1" column="55" selection-start-line="1" selection-start-column="55" selection-end-line="1" selection-end-column="55" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+>>>>>>> 2d965b38176021de6146ec7a7382a681fda38836
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
@@ -35,6 +90,7 @@
       <find>demarrer_car</find>
       <find>demarrer</find>
       <find>rec_cont</find>
+      <find>Contenu</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -56,11 +112,26 @@
         <option value="$PROJECT_DIR$/Makefile" />
         <option value="$PROJECT_DIR$/analyse_lexicale.c" />
         <option value="$PROJECT_DIR$/INF404_ELFAKHARANY_GANNOUNE/traducteurHTML.c" />
-        <option value="$PROJECT_DIR$/INF404_ELFAKHARANY_GANNOUNE/analyse_syntaxique.h" />
-        <option value="$PROJECT_DIR$/INF404_ELFAKHARANY_GANNOUNE/analyse_lexicale.h" />
-        <option value="$PROJECT_DIR$/INF404_ELFAKHARANY_GANNOUNE/analyse_lexicale.c" />
         <option value="$PROJECT_DIR$/INF404_ELFAKHARANY_GANNOUNE/test.txt" />
+        <option value="$PROJECT_DIR$/INF404_ELFAKHARANY_GANNOUNE/analyse_lexicale.h" />
+        <option value="$PROJECT_DIR$/INF404_ELFAKHARANY_GANNOUNE/analyse_syntaxique.h" />
+        <option value="$PROJECT_DIR$/INF404_ELFAKHARANY_GANNOUNE/analyse_lexicale.c" />
+        <option value="$PROJECT_DIR$/INF404_ELFAKHARANY_GANNOUNE/lecture_caracteres.c" />
+        <option value="$PROJECT_DIR$/INF404_ELFAKHARANY_GANNOUNE/Tests/ErreurLien.txt" />
+        <option value="$PROJECT_DIR$/INF404_ELFAKHARANY_GANNOUNE/Tests/ErreurLexicale.txt" />
+        <option value="$PROJECT_DIR$/INF404_ELFAKHARANY_GANNOUNE/Tests/ErreurLien2.txt" />
+        <option value="$PROJECT_DIR$/INF404_ELFAKHARANY_GANNOUNE/Tests/ErreurListe.txt" />
+        <option value="$PROJECT_DIR$/INF404_ELFAKHARANY_GANNOUNE/Tests/ErreurNombreCaractèresDepasé.txt" />
+        <option value="$PROJECT_DIR$/INF404_ELFAKHARANY_GANNOUNE/Tests/ErreurParagraphe.txt" />
+        <option value="$PROJECT_DIR$/INF404_ELFAKHARANY_GANNOUNE/Tests/ErreurHTML.txt" />
+        <option value="$PROJECT_DIR$/INF404_ELFAKHARANY_GANNOUNE/Tests/ErreurPhoto.txt" />
+        <option value="$PROJECT_DIR$/INF404_ELFAKHARANY_GANNOUNE/Tests/testImageListeParagrapheLien.txt" />
+        <option value="$PROJECT_DIR$/INF404_ELFAKHARANY_GANNOUNE/Tests/testContenu.txt" />
+        <option value="$PROJECT_DIR$/INF404_ELFAKHARANY_GANNOUNE/Tests/testPhotoListedeParagraphesLien.txt" />
+        <option value="$PROJECT_DIR$/INF404_ELFAKHARANY_GANNOUNE/Tests/testTitre.txt" />
+        <option value="$PROJECT_DIR$/INF404_ELFAKHARANY_GANNOUNE/Tests/testTitrePhotoListedeParagraphesLien.txt" />
         <option value="$PROJECT_DIR$/INF404_ELFAKHARANY_GANNOUNE/analyse_syntaxique.c" />
+        <option value="$PROJECT_DIR$/INF404_ELFAKHARANY_GANNOUNE/Tests/ErreurListe2.txt" />
       </list>
     </option>
   </component>
@@ -87,6 +158,12 @@
               <item name="Inf404" type="b2602c69:ProjectViewProjectNode" />
               <item name="Inf404" type="462c0819:PsiDirectoryNode" />
               <item name="INF404_ELFAKHARANY_GANNOUNE" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Inf404" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Inf404" type="462c0819:PsiDirectoryNode" />
+              <item name="INF404_ELFAKHARANY_GANNOUNE" type="462c0819:PsiDirectoryNode" />
+              <item name="Tests" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -147,10 +224,18 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
+<<<<<<< HEAD
     <option name="totallyTimeSpent" value="43759000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1295" height="735" extended-state="6" />
+=======
+    <option name="totallyTimeSpent" value="48262000" />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-7" y="-7" width="1295" height="735" extended-state="6" />
+    <editor active="true" />
+>>>>>>> 2d965b38176021de6146ec7a7382a681fda38836
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25991902" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -317,11 +402,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/INF404_ELFAKHARANY_GANNOUNE/lecture_caracteres.c">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-204" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/testDes.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -337,31 +417,137 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/INF404_ELFAKHARANY_GANNOUNE/analyse_syntaxique.c">
+    <entry file="file://$PROJECT_DIR$/INF404_ELFAKHARANY_GANNOUNE/analyse_lexicale.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2368">
-          <caret line="194" column="43" selection-start-line="194" selection-start-column="43" selection-end-line="194" selection-end-column="43" />
+        <state relative-caret-position="-602">
+          <caret line="27" column="14" selection-start-line="27" selection-start-column="14" selection-end-line="27" selection-end-column="14" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/INF404_ELFAKHARANY_GANNOUNE/analyse_syntaxique.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-12">
-          <caret line="16" column="17" selection-start-line="16" selection-start-column="17" selection-end-line="16" selection-end-column="17" />
+        <state relative-caret-position="486">
+          <caret line="47" column="27" selection-start-line="47" selection-start-column="27" selection-end-line="47" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/INF404_ELFAKHARANY_GANNOUNE/lecture_caracteres.c">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-500">
+          <caret line="33" column="58" selection-start-line="33" selection-start-column="58" selection-end-line="33" selection-end-column="58" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/INF404_ELFAKHARANY_GANNOUNE/Tests/ErreurHTML.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" column="19" lean-forward="true" selection-start-line="1" selection-start-column="19" selection-end-line="1" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/INF404_ELFAKHARANY_GANNOUNE/Tests/ErreurLexicale.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="27" selection-start-column="27" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+<<<<<<< HEAD
+    <entry file="file://$PROJECT_DIR$/INF404_ELFAKHARANY_GANNOUNE/test.txt" />
+    <entry file="file://$PROJECT_DIR$/INF404_ELFAKHARANY_GANNOUNE/traducteurHTML.c">
+=======
+    <entry file="file://$PROJECT_DIR$/INF404_ELFAKHARANY_GANNOUNE/Tests/ErreurLien.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" column="29" selection-start-line="1" selection-start-column="29" selection-end-line="1" selection-end-column="70" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/INF404_ELFAKHARANY_GANNOUNE/Tests/ErreurLien2.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="46" selection-start-column="46" selection-end-column="46" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/INF404_ELFAKHARANY_GANNOUNE/Tests/ErreurNombreCaractèresDepasé.txt">
+>>>>>>> 2d965b38176021de6146ec7a7382a681fda38836
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="93" selection-start-column="93" selection-end-column="93" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/INF404_ELFAKHARANY_GANNOUNE/Tests/ErreurParagraphe.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" column="9" lean-forward="true" selection-start-line="1" selection-start-column="9" selection-end-line="1" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/INF404_ELFAKHARANY_GANNOUNE/Tests/ErreurPhoto.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" column="71" selection-start-line="1" selection-start-column="71" selection-end-line="1" selection-end-column="71" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/INF404_ELFAKHARANY_GANNOUNE/Tests/testTitreContenu.txt">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/INF404_ELFAKHARANY_GANNOUNE/Tests/testTitrePhotoListedeParagraphesLien.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" lean-forward="true" selection-start-line="6" selection-end-line="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/INF404_ELFAKHARANY_GANNOUNE/Tests/testTitreContenu.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" lean-forward="true" selection-start-line="4" selection-end-line="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/INF404_ELFAKHARANY_GANNOUNE/Tests/testTitre.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" column="13" selection-start-line="1" selection-start-column="13" selection-end-line="1" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/INF404_ELFAKHARANY_GANNOUNE/Tests/testPhotoListedeParagraphesLien.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret selection-end-line="5" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/INF404_ELFAKHARANY_GANNOUNE/analyse_lexicale.c">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3434">
-          <caret line="202" column="17" selection-start-line="202" selection-start-column="17" selection-end-line="202" selection-end-column="17" />
+        <state relative-caret-position="-2057">
+          <caret line="41" column="12" lean-forward="true" selection-start-line="41" selection-start-column="12" selection-end-line="41" selection-end-column="12" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/INF404_ELFAKHARANY_GANNOUNE/analyse_lexicale.h">
+    <entry file="file://$PROJECT_DIR$/INF404_ELFAKHARANY_GANNOUNE/analyse_syntaxique.c">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="73">
-          <caret line="52" column="34" selection-start-line="52" selection-start-column="34" selection-end-line="52" selection-end-column="34" />
+        <state relative-caret-position="197">
+          <caret line="232" column="25" selection-start-line="232" selection-start-column="25" selection-end-line="232" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/INF404_ELFAKHARANY_GANNOUNE/Tests/ErreurListe.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" column="29" lean-forward="true" selection-start-line="1" selection-start-column="29" selection-end-line="1" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/INF404_ELFAKHARANY_GANNOUNE/Tests/ErreurListe2.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" column="55" selection-start-line="1" selection-start-column="55" selection-end-line="1" selection-end-column="55" />
         </state>
       </provider>
     </entry>

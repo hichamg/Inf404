@@ -1,0 +1,3 @@
+#L oubliée dans Liste -> L Contenu_Liste L
+#Une liste peut contenir seulement ce qu'il ya dans contenu liste
+H L P "1" P P "2" P P "3" P T "Hello World" L F
