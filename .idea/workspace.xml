@@ -13,18 +13,7 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b6c7cf47-6ab1-45f3-ad1a-539a8cfbca67" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/INF404_ELFAKHARANY_GANNOUNE/Makefile" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/INF404_ELFAKHARANY_GANNOUNE/analyse_lexicale.c" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/INF404_ELFAKHARANY_GANNOUNE/analyse_lexicale.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/INF404_ELFAKHARANY_GANNOUNE/analyse_syntaxique.c" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/INF404_ELFAKHARANY_GANNOUNE/analyse_syntaxique.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/INF404_ELFAKHARANY_GANNOUNE/lecture_caracteres.c" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/INF404_ELFAKHARANY_GANNOUNE/lecture_caracteres.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/INF404_ELFAKHARANY_GANNOUNE/traducteurHTML.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test.txt" beforeDir="false" />
-    </list>
+    <list default="true" id="b6c7cf47-6ab1-45f3-ad1a-539a8cfbca67" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -67,7 +56,7 @@
         <entry file="file://$PROJECT_DIR$/INF404_ELFAKHARANY_GANNOUNE/analyse_lexicale.h">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="73">
-              <caret line="52" column="34" lean-forward="true" selection-start-line="52" selection-start-column="34" selection-end-line="52" selection-end-column="34" />
+              <caret line="52" column="34" selection-start-line="52" selection-start-column="34" selection-end-line="52" selection-end-column="34" />
             </state>
           </provider>
         </entry>
@@ -76,7 +65,7 @@
         <entry file="file://$PROJECT_DIR$/INF404_ELFAKHARANY_GANNOUNE/traducteurHTML.c">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="136">
-              <caret line="8" column="35" lean-forward="true" selection-start-line="8" selection-start-column="35" selection-end-line="8" selection-end-column="35" />
+              <caret line="8" column="35" selection-start-line="8" selection-start-column="35" selection-end-line="8" selection-end-column="35" />
             </state>
           </provider>
         </entry>
@@ -206,12 +195,12 @@
       <workItem from="1587238106840" duration="306000" />
       <workItem from="1587907828102" duration="26557000" />
       <workItem from="1587975611378" duration="11392000" />
-      <workItem from="1588517448994" duration="5098000" />
+      <workItem from="1588517448994" duration="5367000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="43353000" />
+    <option name="totallyTimeSpent" value="43622000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-1928" y="-8" width="1936" height="1096" extended-state="6" />
@@ -403,7 +392,7 @@
     <entry file="file://$PROJECT_DIR$/INF404_ELFAKHARANY_GANNOUNE/traducteurHTML.c">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="136">
-          <caret line="8" column="35" lean-forward="true" selection-start-line="8" selection-start-column="35" selection-end-line="8" selection-end-column="35" />
+          <caret line="8" column="35" selection-start-line="8" selection-start-column="35" selection-end-line="8" selection-end-column="35" />
         </state>
       </provider>
     </entry>
@@ -431,7 +420,7 @@
     <entry file="file://$PROJECT_DIR$/INF404_ELFAKHARANY_GANNOUNE/analyse_lexicale.h">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="73">
-          <caret line="52" column="34" lean-forward="true" selection-start-line="52" selection-start-column="34" selection-end-line="52" selection-end-column="34" />
+          <caret line="52" column="34" selection-start-line="52" selection-start-column="34" selection-end-line="52" selection-end-column="34" />
         </state>
       </provider>
     </entry>
