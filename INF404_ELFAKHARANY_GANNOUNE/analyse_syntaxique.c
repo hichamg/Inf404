@@ -7,7 +7,7 @@
 #include "analyse_lexicale.h"
 #include "lecture_caracteres.h"
 
-//Ecrire_en_html -> H Titre Contenu F
+//Ecrire_en_html -> H Titre Corps F
 
 void rec_html(FILE* f2){
 
@@ -25,7 +25,7 @@ void rec_html(FILE* f2){
             case LienTB:
             case Photo:
                 fprintf(f2, "\t<body>\n");
-                rec_contenu(f2);
+                rec_corps(f2);
                 fprintf(f2, "\t</body>\n");
             case HTMLFIN:
                 fprintf(f2,"</html>\n");
@@ -92,7 +92,7 @@ void rec_phrase(FILE* f2){
         i++;
     }
     if (i==NCARMAX){
-        printf("ERREUR SYNTAXIQUE: Guillemet \" Oubliée - Ligne: %d, Colonne: %d ou nombre de caractères dans phrase dépasé\n", lexeme_courant().ligne,lexeme_courant().colonne);
+        printf("ERREUR SYNTAXIQUE: Guillemet \" Oubliée ou le nombre de caractères maximal (%d) dans phrase a été dépasé\n",NCARMAX);
         exit(6);
     }
 }
@@ -212,24 +212,45 @@ void rec_contenuListe(FILE *f2) {
             fprintf(f2,"\t\t</li>\n");
             rec_contenuListe(f2);
             break;
-        default:
+        case Liste:
             break;
+        default:
+            printf("ERREUR SYNTAXIQUE: Une liste peut contenir que des photos, des liens et des paragraphes\n");
+            exit(15);
     }
 }
 
-//Contenu -> Photo Paragraphe Liste Lien Contenu
-//Contenu -> VIDE
+//Corps -> Photo Paragraphe Liste Lien Corps
+//Corps -> VIDE
 
-void rec_contenu(FILE* f2){
+void rec_corps(FILE* f2){
 
     switch(lexeme_courant().nature){
-        case Photo: rec_photo(f2); rec_contenu(f2);
-        case Parag: rec_paragraphe(f2); rec_contenu(f2);
-        case Liste: rec_liste(f2); rec_contenu(f2);
-        case LienTB: rec_lien(f2); rec_contenu(f2);
-        default: break;
+        case Photo: rec_photo(f2); rec_corps(f2);
+        case Parag: rec_paragraphe(f2); rec_corps(f2);
+        case Liste: rec_liste(f2); rec_corps(f2);
+        case LienTB: rec_lien(f2); rec_corps(f2);
+        case HTMLFIN: break;
+        default:
+            printf("ERREUR SYNTAXIQUE: Un corps peut contenir que des photos, des paragraphes, des listes et des liens");
+            exit(16);
     }
 }
+
+//Comment -> # Chaine_de_caracteres_sur_une_seule_ligne
+void rec_comment(FILE* f2){
+
+    if (lexeme_courant().nature == Comment){
+        while (caractere_courant() != '\n' && caractere_courant() != '\r')
+            avancer_car();
+        if (caractere_courant() == '\r')
+            avancer();
+        if (caractere_courant() == '\n')
+            avancer();
+        rec_comment(f2);
+    }
+}
+
  /* ----------------------------------------------------------------------- */
 
 void analyser(char* nomFichierSource,char* nomFicherDest){
@@ -240,16 +261,20 @@ void analyser(char* nomFichierSource,char* nomFicherDest){
      f2 = fopen(nomFicherDest,"w");
 
      //Si le pointeur du fichier destination est nul
-     if (f2==NULL)
+     if (f2==NULL){
+         printf("Le fichier %s n'existe pas",nomFicherDest);
          exit(13);
+     }
 
+    rec_comment(f2);
     rec_html(f2);
+    rec_comment(f2);
 
     if(lexeme_courant().nature == FIN_SEQUENCE){
         printf("SYNTAXE CORRECTE\n");
     }else{
         printf("SYNTAXE INCORRECTE\n");
-        exit(14);
+        //exit(14);
     }
 
 }    

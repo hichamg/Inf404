@@ -1,0 +1,4 @@
+#Crée un site en HTML avec un titre, un paragraphe et une photo
+#Note: On peut sauter des lignes
+H T "Projet INF404" T P "Bienvenu a notre site" P
+I "https://dlst.univ-grenoble-alpes.fr/uas/dlst/LOGO/UFR-DLST-coul-web.jpg" I F

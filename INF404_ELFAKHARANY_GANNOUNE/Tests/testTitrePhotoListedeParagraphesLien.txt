@@ -1,0 +1,6 @@
+#Crée un site en HTML avec un titre une photo, une liste des trois paragraphes et un lien
+#La photo du logo du dlst du site du dlst est utilisé pour ce test
+H T "INF404" T
+I "https://dlst.univ-grenoble-alpes.fr/uas/dlst/LOGO/UFR-DLST-coul-web.jpg" I
+L P "Premier Paragraphe" P P "Deuxième Paragraphe" P P "Troisième Paragraphe" P L
+_ "https://dlst.univ-grenoble-alpes.fr","Cliquez içi pour acceder au site du DLST"_ F

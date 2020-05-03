@@ -13,9 +13,9 @@ void rec_html(FILE* f2) ;
 // Titre -> VIDE
 void rec_titre(FILE* f2) ;
 
-//Contenu -> Photo Paragraphe Liste Lien Contenu
-//Contenu -> VIDE
-void rec_contenu(FILE* f2) ;
+//Corps -> Photo Paragraphe Liste Lien Corps
+//Corps -> VIDE
+void rec_corps(FILE* f2) ;
 
 //Paragraphe -> P Texte P
 //Paragraphe -> VIDE
@@ -44,4 +44,6 @@ void rec_phrase(FILE* f2);
 // Contenu_Liste -> VIDE
 void rec_contenuListe(FILE* f2);
 
+//Comment -> # Chaine_de_caracteres_sur_une_seule_ligne
+void rec_comment(FILE* f2);
 #endif

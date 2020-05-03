@@ -1,0 +1,2 @@
+#S n'est pas dans le lexeme
+H S " " P F

@@ -25,6 +25,7 @@
       LienTB,
       LienVR,
       Citat,
+      Comment,
       FIN_SEQUENCE,     // pseudo lexeme ajoute en fin de sequence
     } Nature_Lexeme ;
 
