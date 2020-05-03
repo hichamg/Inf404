@@ -237,7 +237,7 @@ void rec_corps(FILE* f2){
     }
 }
 
-//Comment -> # Chaine_de_caracteres_sur_une_seule_ligne
+//Commentaire -> # Chaine_de_caracteres_sur_une_seule_ligne
 void rec_comment(FILE* f2){
 
     if (lexeme_courant().nature == Comment){

@@ -44,6 +44,6 @@ void rec_phrase(FILE* f2);
 // Contenu_Liste -> VIDE
 void rec_contenuListe(FILE* f2);
 
-//Comment -> # Chaine_de_caracteres_sur_une_seule_ligne
+//Commentaire -> # Chaine_de_caracteres_sur_une_seule_ligne
 void rec_comment(FILE* f2);
 #endif

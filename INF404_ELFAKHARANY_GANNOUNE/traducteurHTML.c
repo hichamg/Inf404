@@ -7,9 +7,9 @@
 
 
 int main (int argc, char *argv[]) {
-    if (argc != 3)
+    if (argc != 2)
     {
-        printf("Il faut donner deux noms de fichiers en argument");
+        printf("Il faut donner un nom de fichier en argument");
         exit(0);
     }
 
@@ -22,18 +22,10 @@ int main (int argc, char *argv[]) {
         }
     }
 
-    //Si un fichier .html n'est pas inseré comme deuxième argument: ERREUR
-
-    for(int i=strlen(argv[2])-5,j=0; i<strlen(argv[2]),j<strlen(".html"); i++, j++) {
-        if ((argv[2][i]) != ".html"[j]) {
-            printf("Un fichier .html est attendu\n");
-            exit(1);
-        }
-    }
-    analyser(argv[1],argv[2]);
+    analyser(argv[1],"traducteur.html");
 
     //Execution du fichier inseré en deuxieme argument (.html)
-    ShellExecute(NULL,"open",argv[2],NULL,NULL,SW_SHOWNORMAL);
+    ShellExecute(NULL,"open","traducteur.html",NULL,NULL,SW_SHOWNORMAL);
 
     return 0 ;
 }
