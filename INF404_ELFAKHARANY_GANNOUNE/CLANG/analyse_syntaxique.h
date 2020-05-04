@@ -9,9 +9,16 @@ void analyser(char* nomFichierSource,char* nomFicherDest);
 //Ecrire_en_html -> H Titre Contenu F
 void rec_html(FILE* f2) ;
 
+// Tete -> Titre CSS
+void rec_tete(FILE* f2);
+
 // Titre -> T Texte T
 // Titre -> VIDE
 void rec_titre(FILE* f2) ;
+
+// CSS -> S Texte , Texte S
+// CSS -> VIDE
+void rec_css(FILE* f2);
 
 //Corps -> Photo Paragraphe Liste Lien Corps
 //Corps -> VIDE

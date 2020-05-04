@@ -1,4 +1,5 @@
 #Crée un site en HTML avec un titre, un paragraphe et une photo
+#La photo du logo du dlst du site du dlst est utilisé pour ce test
 #Note: On peut sauter des lignes
 H T "Projet INF404" T P "Bienvenue sur notre site" P
-I "https://dlst.univ-grenoble-alpes.fr/uas/dlst/LOGO/UFR-DLST-coul-web.jpg" I F
+I "UFR-DLST-coul-web.jpg" I F

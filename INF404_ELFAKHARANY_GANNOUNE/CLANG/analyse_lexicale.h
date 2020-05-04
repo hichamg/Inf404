@@ -22,10 +22,11 @@
       Parag,
       Liste,
       Photo,
-      LienTB,
-      LienVR,
+      Lien,
+      Virgule,
       Citat,
       Comment,
+      CSS,
       FIN_SEQUENCE,     // pseudo lexeme ajoute en fin de sequence
     } Nature_Lexeme ;
 
@@ -34,7 +35,7 @@
       Nature_Lexeme nature;    // nature du lexeme
       unsigned int ligne;           // numero de ligne
       unsigned int colonne;         // numero de colonne
-      char chaine[100];           // chaine de caracteres
+      char chaine[256];           // chaine de caracteres
    } Lexeme ;
 
    void afficher(Lexeme l);

@@ -5,7 +5,7 @@
 
 #include "analyse_syntaxique.h"
 #include "analyse_lexicale.h"
-#include "lecture_caracteres.h"
+#include "../GCC/lecture_caracteres.h"
 
 //Ecrire_en_html -> H Titre Corps F
 
@@ -16,13 +16,13 @@ void rec_html(FILE* f2){
         fprintf(f2,"<!DOCTYPE html>\n"); //traduction au fur et a mesure de l'analyse syntaxique
         fprintf(f2,"<html>\n");
         avancer(); //avancer au caractere suivant en passant par la fonction reconnaitre_lexeme()
-        rec_titre(f2);
+        rec_tete(f2);
 
         switch(lexeme_courant().nature) {
 
             case Liste:
             case Parag:
-            case LienTB:
+            case Lien:
             case Photo:
                 fprintf(f2, "\t<body>\n");
                 rec_corps(f2);
@@ -42,25 +42,60 @@ void rec_html(FILE* f2){
     }
 }
 
+// Tete -> Titre CSS
+
+void rec_tete(FILE* f2){
+    fprintf(f2,"\t<head>\n");
+    rec_titre(f2);
+    rec_css(f2);
+    fprintf(f2,"\t</head>\n");
+}
+
 // Titre -> T Texte T
 // Titre -> VIDE
 
 void rec_titre(FILE* f2){
 
     if (lexeme_courant().nature==Titre){
-        fprintf(f2,"\t<head>\n");
+
         fprintf(f2,"\t\t<title>");
         avancer();
         rec_texte(f2);
         switch(lexeme_courant().nature){
             case Titre:
                 fprintf(f2,"</title>\n");
-                fprintf(f2,"\t</head>\n");
                 avancer(); break;
             default:
                 printf("ERREUR SYNTAXIQUE: T Oubliée - Ligne: %d, Colonne: %d\n", lexeme_courant().ligne,lexeme_courant().colonne);
             exit(4);
         }
+    }
+}
+
+// CSS -> S Texte , Texte S
+// CSS -> VIDE
+
+void rec_css(FILE *f2){
+
+    if (lexeme_courant().nature==CSS){
+        fprintf(f2,"\t\t<link rel=\"");
+        avancer();
+        rec_texte(f2);
+        switch(lexeme_courant().nature) {
+            case Virgule:
+                fprintf(f2, "\" href=\"");
+                avancer();
+                rec_texte(f2);
+                fprintf(f2, "\">\n");
+                if (lexeme_courant().nature == CSS){
+                    avancer();
+                    break;
+                }
+            default:
+                printf("ERREUR SYNTAXIQUE: S Oubliée - Ligne: %d, Colonne: %d\n", lexeme_courant().ligne,lexeme_courant().colonne);
+                exit(4);
+        }
+
     }
 }
 
@@ -122,12 +157,12 @@ void rec_photo(FILE* f2){
 
 void rec_lien(FILE* f2){
 
-    if (lexeme_courant().nature == LienTB){
+    if (lexeme_courant().nature == Lien){
         fprintf(f2,"\t\t<a href=\"");
         avancer();
         rec_texte(f2);
         switch (lexeme_courant().nature) {
-            case LienVR:
+            case Virgule:
                 fprintf(f2,"\">");
                 avancer();
                 rec_texte(f2);
@@ -137,7 +172,7 @@ void rec_lien(FILE* f2){
                 exit(8);
         }
         switch (lexeme_courant().nature){
-            case LienTB:
+            case Lien:
                 fprintf(f2,"</a>\n");
                 avancer();
                 break;
@@ -206,7 +241,7 @@ void rec_contenuListe(FILE *f2) {
             fprintf(f2,"\t\t</li>\n");
             rec_contenuListe(f2);
             break;
-        case LienTB:
+        case Lien:
             fprintf(f2,"\t\t<li>");
             rec_lien(f2);
             fprintf(f2,"\t\t</li>\n");
@@ -221,7 +256,6 @@ void rec_contenuListe(FILE *f2) {
 }
 
 //Corps -> Photo Paragraphe Liste Lien Corps
-//Corps -> VIDE
 
 void rec_corps(FILE* f2){
 
@@ -229,7 +263,7 @@ void rec_corps(FILE* f2){
         case Photo: rec_photo(f2); rec_corps(f2);
         case Parag: rec_paragraphe(f2); rec_corps(f2);
         case Liste: rec_liste(f2); rec_corps(f2);
-        case LienTB: rec_lien(f2); rec_corps(f2);
+        case Lien: rec_lien(f2); rec_corps(f2);
         case HTMLFIN: break;
         default:
             printf("ERREUR SYNTAXIQUE: Un corps peut contenir que des photos, des paragraphes, des listes et des liens");

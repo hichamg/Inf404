@@ -1,7 +1,7 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <string.h>
-#include "analyse_syntaxique.h"
+#include "../CLANG/analyse_syntaxique.h"
 
 
 int main (int argc, char *argv[]) {

@@ -17,9 +17,12 @@ Choisissez votre compilateur: "gcc" ou "clang"
 Ouvrez le fichier traducteur.html en utilisant votre navigateur préferé pour visualiser le site.
 
 Syntaxe/Grammaire pour Fichiers .txt:
-Ecrire_en_html -> H Titre Corps F
+Ecrire_en_html -> H Tete Corps F
+Tete -> Titre CSS
 Titre -> T Texte T
 Titre -> VIDE
+CSS -> S Texte , Texte S
+CSS -> Vide
 Photo -> I Texte I
 Photo -> VIDE
 Lien -> _ Texte , Texte _
@@ -31,7 +34,6 @@ Liste -> VIDE
 Contenu_Liste -> Photo Paragraphe Lien Contenu_Liste
 Contenu_Liste -> VIDE
 Corps -> Photo Paragraphe Liste Lien Corps
-Corps -> VIDE
 Texte -> “ Phrase “
 Texte -> VIDE
 Phrase -> Chaine_de_caractères

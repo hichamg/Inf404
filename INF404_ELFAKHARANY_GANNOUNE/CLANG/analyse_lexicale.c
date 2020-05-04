@@ -20,7 +20,7 @@
 #include <stdlib.h>
 #include <stdio.h>
 
-#include "lecture_caracteres.h"
+#include "../GCC/lecture_caracteres.h"
 #include "analyse_lexicale.h"
 
 /* --------------------------------------------------------------------- */
@@ -134,11 +134,11 @@ void reconnaitre_lexeme() {
                                 etat = E_FIN;
                                 break;
                             case '_':
-                                lexeme_en_cours.nature = LienTB;
+                                lexeme_en_cours.nature = Lien;
                                 etat = E_FIN;
                                 break;
                             case ',':
-                                lexeme_en_cours.nature = LienVR;
+                                lexeme_en_cours.nature = Virgule;
                                 etat = E_FIN;
                                 break;
                             case '\"':
@@ -147,6 +147,10 @@ void reconnaitre_lexeme() {
                                 break;
                             case '#':
                                 lexeme_en_cours.nature = Comment;
+                                etat = E_FIN;
+                                break;
+                            case 'S':
+                                lexeme_en_cours.nature = CSS;
                                 etat = E_FIN;
                                 break;
                             default:
@@ -210,6 +214,7 @@ int est_symbole(char c)  {
         case ',':
         case '\"':
         case '#':
+        case 'S':
             return 1;
 
         default:
