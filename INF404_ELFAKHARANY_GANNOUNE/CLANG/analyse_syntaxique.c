@@ -7,7 +7,7 @@
 #include "analyse_lexicale.h"
 #include "../GCC/lecture_caracteres.h"
 
-//Ecrire_en_html -> H Titre Corps F
+//Ecrire_en_html -> H Titre Header Corps F
 
 void rec_html(FILE* f2){
 
@@ -24,7 +24,9 @@ void rec_html(FILE* f2){
             case Parag:
             case Lien:
             case Photo:
+            case Header:
                 fprintf(f2, "\t<body>\n");
+                rec_header(f2);
                 rec_corps(f2);
                 fprintf(f2, "\t</body>\n");
             case HTMLFIN:
@@ -87,15 +89,39 @@ void rec_css(FILE *f2){
                 avancer();
                 rec_texte(f2);
                 fprintf(f2, "\">\n");
-                if (lexeme_courant().nature == CSS){
+                if (lexeme_courant().nature == CSS) {
                     avancer();
                     break;
+                } else{
+                    printf("ERREUR SYNTAXIQUE: S Oubliée - Ligne: %d, Colonne: %d\n", lexeme_courant().ligne,lexeme_courant().colonne);
+                    exit(4);
                 }
             default:
-                printf("ERREUR SYNTAXIQUE: S Oubliée - Ligne: %d, Colonne: %d\n", lexeme_courant().ligne,lexeme_courant().colonne);
+                printf("ERREUR SYNTAXIQUE: Virgule , Oubliée - Ligne: %d, Colonne: %d\n", lexeme_courant().ligne,lexeme_courant().colonne);
                 exit(4);
         }
 
+    }
+}
+
+//Header -> D Texte D
+//Header -> VIDE
+
+void rec_header(FILE* f2) {
+    if (lexeme_courant().nature == Header) {
+        fprintf(f2, "\t\t<h1>");
+        avancer();
+        rec_texte(f2);
+        switch (lexeme_courant().nature) {
+            case Header:
+                fprintf(f2, "</h1>\n");
+                avancer();
+                break;
+            default:
+                printf("ERREUR SYNTAXIQUE: D Oubliée - Ligne: %d, Colonne: %d\n", lexeme_courant().ligne,
+                       lexeme_courant().colonne);
+                exit(4);
+        }
     }
 }
 
@@ -305,7 +331,7 @@ void analyser(char* nomFichierSource,char* nomFicherDest){
     rec_comment(f2);
 
     if(lexeme_courant().nature == FIN_SEQUENCE){
-        printf("SYNTAXE CORRECTE\n");
+        printf("SYNTAXE CORRECTE: Le fichier traducteur.html a été généré. Vous pouvez l'ouvrir avec votre navigateur préferé\n");
     }else{
         printf("SYNTAXE INCORRECTE\n");
         //exit(14);

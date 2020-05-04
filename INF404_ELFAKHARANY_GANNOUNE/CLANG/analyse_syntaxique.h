@@ -20,6 +20,10 @@ void rec_titre(FILE* f2) ;
 // CSS -> VIDE
 void rec_css(FILE* f2);
 
+// Header -> D Texte D
+// Header -> VIDE
+void rec_header(FILE* f2) ;
+
 //Corps -> Photo Paragraphe Liste Lien Corps
 //Corps -> VIDE
 void rec_corps(FILE* f2) ;

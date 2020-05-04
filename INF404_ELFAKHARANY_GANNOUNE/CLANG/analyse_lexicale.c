@@ -121,6 +121,10 @@ void reconnaitre_lexeme() {
                                 lexeme_en_cours.nature = Titre;
                                 etat = E_FIN;
                                 break;
+                            case 'D':
+                                lexeme_en_cours.nature = Header;
+                                etat = E_FIN;
+                                break;
                             case 'P':
                                 lexeme_en_cours.nature = Parag;
                                 etat = E_FIN;
@@ -210,6 +214,7 @@ int est_symbole(char c)  {
         case 'P':
         case 'L':
         case 'I':
+        case 'D':
         case '_':
         case ',':
         case '\"':

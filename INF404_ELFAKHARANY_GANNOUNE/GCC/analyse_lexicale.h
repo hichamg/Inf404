@@ -26,6 +26,7 @@
       Virgule,
       Citat,
       Comment,
+      Header,
       CSS,
       FIN_SEQUENCE,     // pseudo lexeme ajoute en fin de sequence
     } Nature_Lexeme ;
