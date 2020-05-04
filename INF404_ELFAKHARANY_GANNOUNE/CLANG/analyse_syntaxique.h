@@ -1,5 +1,5 @@
 #ifndef __LEC_CAR__
-#define LEC_CAR__
+#define __LEC_CAR__
 
 
 //Déclaration des fonctions
@@ -46,4 +46,18 @@ void rec_contenuListe(FILE* f2);
 
 //Commentaire -> # Chaine_de_caracteres_sur_une_seule_ligne
 void rec_comment(FILE* f2);
+
+void avancer_car();
+// pre-condition : la sequence de caracteres est accessible
+// e.i. : fin_de_sequence = faux ;
+//        on pose i = rang du caractere courant
+// e.f. : fin_de_sequence vaut vrai ou alors caractere_courant est le
+//        caractere de rang i+1 dans la sequence
+
+char caractere_courant();
+// pre-condition : la sequence de caracteres est accessible
+// caractere_courant est le caractere de rang i
+// pre-condition : la machine sequentielle est demarree et
+// fin_de_sequence = faux
+
 #endif

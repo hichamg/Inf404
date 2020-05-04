@@ -6,7 +6,7 @@ lecture_caracteres.o: lecture_caracteres.h lecture_caracteres.c
 analyse_lexicale.o: analyse_lexicale.c analyse_lexicale.h lecture_caracteres.h
 	gcc -g -Wall -c analyse_lexicale.c
 
-analyse_syntaxique.o: analyse_syntaxique.c analyse_lexicale.h lecture_caracteres.h
+analyse_syntaxique.o: analyse_syntaxique.c analyse_syntaxique.h analyse_lexicale.h lecture_caracteres.h
 	gcc -g -Wall -c analyse_syntaxique.c
 
 traducteurHTML: traducteurHTML.o analyse_syntaxique.o analyse_lexicale.o lecture_caracteres.o

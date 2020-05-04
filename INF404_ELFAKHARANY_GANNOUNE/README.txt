@@ -1,11 +1,19 @@
 Bonjour,
 Ce projet consiste a traduire un fichier .txt donné en argument en HTML.
-Un fichier "traducteur.html" est crée dans le meme répertoire que le fichier .txt donné en argument
-et executé automatiquement.
+Un fichier "traducteur.html" sera crée dans votre repertoire.
 
 Mode d'Utilisation:
 ./traducteurHTML.sh NOM_DU_FICHIER.txt
-Ouvrez le fichier traducteur.html en utilisant votre navigateur preferé pour visualiser le site.
+Il existe dans Tests des fichiers prêt à tester.
+Exemple:
+./traducteur.sh ErreurHTML.txt
+Résultat:
+"ERREUR SYNTAXIQUE: F Oubliée - Ligne: 2, Colonne: 20"
+./traducteur.sh testTitre.txt
+Resultat:
+"SYNTAXE CORRECTE"
+Choisissez votre compilateur: "gcc" ou "clang"
+Ouvrez le fichier traducteur.html en utilisant votre navigateur préferé pour visualiser le site.
 
 Syntaxe/Grammaire pour Fichiers .txt:
 Ecrire_en_html -> H Titre Corps F
