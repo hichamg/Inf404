@@ -5,6 +5,7 @@ Un fichier "traducteur.html" sera crée dans votre repertoire.
 Mode d'Utilisation:
 ./traducteurHTML.sh NOM_DU_FICHIER.txt
 Il existe dans Tests des fichiers prêt à tester.
+Note 1: Vous aurez besoin d'une connection internet pour charger les photos
 Exemple:
 ./traducteur.sh ErreurHTML.txt
 Résultat:
@@ -48,5 +49,5 @@ _
 "
 #
 
-Note 1: Une liste ne peut pas contenir une autre liste.
-Note 2: Une phrase ne peut pas contenir plus que 10000 caractères.
+Note 2: Une liste ne peut pas contenir une autre liste.
+Note 3: Une phrase ne peut pas contenir plus que 10000 caractères.
