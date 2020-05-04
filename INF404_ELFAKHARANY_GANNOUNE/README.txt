@@ -17,12 +17,14 @@ Choisissez votre compilateur: "gcc" ou "clang"
 Ouvrez le fichier traducteur.html en utilisant votre navigateur préferé pour visualiser le site.
 
 Syntaxe/Grammaire pour Fichiers .txt:
-Ecrire_en_html -> H Tete Corps F
+Ecrire_en_html -> H Titre Header Corps F
 Tete -> Titre CSS
 Titre -> T Texte T
 Titre -> VIDE
 CSS -> S Texte , Texte S
 CSS -> Vide
+Header -> D Texte D
+Header -> VIDE
 Photo -> I Texte I
 Photo -> VIDE
 Lien -> _ Texte , Texte _
@@ -50,6 +52,8 @@ _
 ,
 "
 #
+S
+D
 
 Note 2: Une liste ne peut pas contenir une autre liste.
 Note 3: Une phrase ne peut pas contenir plus que 10000 caractères.
