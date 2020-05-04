@@ -4,8 +4,8 @@ Un fichier "traducteur.html" est crée dans le meme répertoire que le fichier .
 et executé automatiquement.
 
 Mode d'Utilisation:
-make
-./traducteurHTML NOM_DE_FICHIER.txt
+./traducteurHTML.sh NOM_DU_FICHIER.txt
+Ouvrez le fichier traducteur.html en utilisant votre navigateur preferé pour visualiser le site.
 
 Syntaxe/Grammaire pour Fichiers .txt:
 Ecrire_en_html -> H Titre Corps F

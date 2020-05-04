@@ -2,7 +2,6 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <string.h>
-#include <windows.h>
 #include "analyse_syntaxique.h"
 
 
@@ -23,9 +22,6 @@ int main (int argc, char *argv[]) {
     }
 
     analyser(argv[1],"traducteur.html");
-
-    //Execution du fichier inseré en deuxieme argument (.html)
-    ShellExecute(NULL,"open","traducteur.html",NULL,NULL,SW_SHOWNORMAL);
 
     return 0 ;
 }
